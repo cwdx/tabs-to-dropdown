@@ -286,18 +286,22 @@ main article h2 small{
     /* Main */
     main{
         padding-top: 50px;
+        transition:all .2s ease;
     }
     main article {
         padding:7.5% 3.75%;
+        transition:all .2s ease;
     }
     main article h2 {
         padding:20px;
         font-size:35px;
         line-height:35px;
+        transition:all .2s ease;
     }
     main article h2 small{
         font-size:20px;
         display:block;
         line-height:20px;
+        transition:all .2s ease;
     }
 };
