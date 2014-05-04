@@ -227,7 +227,7 @@ main article h2 small{
     }
     .tabs-bar {
         left:50px;
-        padding:0 10px;
+        padding:0 30px 0 10px;
     }
     .tabs-bar .tabs-list li a {
         font-size:14px;
