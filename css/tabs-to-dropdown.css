@@ -223,7 +223,7 @@ main article h2 {
     padding:20px;
     font-size:60px;
     background:rgba(19, 32, 45,.4);
-    display:inline-block
+    display:inline-block;
 }
 main article h2 small{
     font-size:30px;
@@ -278,9 +278,11 @@ main article h2 small{
     main article h2 {
         padding:20px;
         font-size:35px;
+        line-height:35px;
     }
     main article h2 small{
-        font-size:25px;
+        font-size:20px;
         display:block;
+        line-height:20px;
     }
 };
