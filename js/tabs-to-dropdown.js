@@ -1,5 +1,4 @@
 var tabbar     = $(".tabs-bar"),
-tabbarMargin   = parseInt(tabbar.css("left")) + parseInt(tabbar.css("right")),
 tabList        = tabbar.children(".tabs-list-container").children(".tabs-list"),
 tabListItem    = tabList.children("li"),
 
@@ -9,7 +8,8 @@ dropdownList   = dropdown.children("ul");
 
 
 var tabsToList = function() {
-    var tabbarWidth      = tabbar.width() + tabbarMargin;
+    tabbarMargin     = parseInt(tabbar.css("left")) + parseInt(tabbar.css("right")),
+    var tabbarWidth  = tabbar.width() + tabbarMargin;
 
     tabListItem.each(function(index) {
         var dropdownListItem = dropdownList.children("li:eq("+index+")"),

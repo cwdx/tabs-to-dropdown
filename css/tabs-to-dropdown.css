@@ -16,12 +16,12 @@ header {
     height:90px;
     position:relative;
     z-index:1;
+    transition:all .2s ease;
 }
 header h1#logo {
     position:absolute;
     top:0;bottom:0;left:0;
     width:90px;
-    height:90px;
     text-align:center;
     overflow:hidden;
     margin:0;
@@ -201,10 +201,10 @@ main article {
     color:rgba(255,255,255,.9);
     text-align:right;
     padding:7.5% 5%;
-    font-size:40px;
 }
 main article h2 {
     padding:20px;
+    font-size:60px;
     background:rgba(19, 32, 45,.4);
     display:inline-block
 }
@@ -214,3 +214,43 @@ main article h2 small{
     color:rgba(25, 189, 155,1);
     text-transform:uppercase
 }
+@media all and (max-width: 699px) {
+    header {
+        height:50px;
+    }
+    header h1#logo {
+        width:50px;
+    }
+    header h1#logo a {
+        line-height:50px;
+        font-size:24px;
+    }
+    .tabs-bar {
+        left:50px;
+        padding:0 10px;
+    }
+    .tabs-bar .tabs-list li a {
+        font-size:14px;
+        padding:0 15px;
+        line-height:50px;
+    }
+    #dropdown-toggle {
+        line-height:50px;
+        font-size:22px;
+        margin:0 20px;
+    }
+    main{
+        padding-top: 50px;
+    }
+    main article {
+        padding:7.5% 3.75%;
+    }
+    main article h2 {
+        padding:20px;
+        font-size:35px;
+    }
+    main article h2 small{
+        font-size:25px;
+        display:block;
+    }
+};
