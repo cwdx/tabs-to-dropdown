@@ -11,7 +11,7 @@ html,body {
     height:100%;
 }
 body {
-    background-image:url(http://upload.wikimedia.org/wikipedia/commons/1/1b/Nice-night-view-with-blurred-cars_1200x900.jpg);
+    background-image:url(/img/nice-by-night.jpg);
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
