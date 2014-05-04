@@ -1,3 +1,12 @@
+/*
+
+      TABS TO DROPDOWN
+     fully respsonsive
+   - christian wijnia -
+
+*/
+
+/* General */
 html,body {
     height:100%;
 }
@@ -11,6 +20,8 @@ body {
 a {
     text-decoration:none;
 }
+
+/* Header */
 header {
     background:rgb(45, 62, 80);
     height:90px;
@@ -42,6 +53,8 @@ header h1#logo a:active {
     opacity:.7;
     transition:all 0s ease;
 }
+
+/* Tabs bar */
 .tabs-bar {
     position:absolute;
     left:90px;right:0;
@@ -94,6 +107,8 @@ header h1#logo a:active {
     transition:all 0 ease;
     color:rgba(25, 189, 155,.65);
 }
+
+/* Dropwdown */
 #dropdown-toggle {
     border:0;outline:0;box-shadow:none;
     display:inline-block;
@@ -181,6 +196,8 @@ header h1#logo a:active {
 .dropdown ul li:active a {
     background:rgba(25, 189, 155,.65);
 }
+
+/* Main */
 main{
     height: 100%;
     display: table;
@@ -215,6 +232,7 @@ main article h2 small{
     text-transform:uppercase
 }
 @media all and (max-width: 699px) {
+    /* header */
     header {
         height:50px;
     }
@@ -225,6 +243,8 @@ main article h2 small{
         line-height:50px;
         font-size:24px;
     }
+
+    /* Tabs bar */
     .tabs-bar {
         left:50px;
         padding:0 30px 0 10px;
@@ -234,11 +254,21 @@ main article h2 small{
         padding:0 15px;
         line-height:50px;
     }
+
+    /* Dropdown */
     #dropdown-toggle {
         line-height:50px;
         font-size:22px;
         margin:0 20px;
     }
+    .dropdown ul {
+        top:30px
+    }
+    .dropdown.open ul {
+        top:50px;
+    }
+
+    /* Main */
     main{
         padding-top: 50px;
     }
