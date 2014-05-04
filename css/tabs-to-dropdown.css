@@ -159,7 +159,6 @@ header h1#logo a:active {
     margin:0;padding:0;
     position:absolute;
     top:60px;right:0;
-    background:red;
     max-width:300px;
     transition:all .2s ease;
     background:rgba(45, 62, 80,.8);
@@ -219,8 +218,8 @@ main{
     left: 0;
     right: 0;
     padding-top: 90px;
-    outline: 1px solid red;
     background:rgba(45, 62, 80,.4);
+    transition:all .2s ease;
 }
 main article {
     display:table-cell;
@@ -228,18 +227,21 @@ main article {
     color:rgba(255,255,255,.9);
     text-align:right;
     padding:7.5% 5%;
+    transition:all .2s ease;
 }
 main article h2 {
     padding:20px;
     font-size:60px;
     background:rgba(19, 32, 45,.4);
     display:inline-block;
+    transition:all .2s ease;
 }
 main article h2 small{
     font-size:30px;
     display:block;
     color:rgba(25, 189, 155,1);
-    text-transform:uppercase
+    text-transform:uppercase;
+    transition:all .2s ease;
 }
 @media all and (max-width: 699px) {
     /* header */
@@ -286,22 +288,18 @@ main article h2 small{
     /* Main */
     main{
         padding-top: 50px;
-        transition:all .2s ease;
     }
     main article {
         padding:7.5% 3.75%;
-        transition:all .2s ease;
     }
     main article h2 {
         padding:20px;
         font-size:35px;
         line-height:35px;
-        transition:all .2s ease;
     }
     main article h2 small{
         font-size:20px;
         display:block;
         line-height:20px;
-        transition:all .2s ease;
     }
 };
