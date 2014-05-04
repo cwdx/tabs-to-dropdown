@@ -6,10 +6,9 @@ dropdownToggle = $("#dropdown-toggle"),
 dropdown       = $(".dropdown,#dropdown-toggle"),
 dropdownList   = dropdown.children("ul");
 
-
 var tabsToList = function() {
-    tabbarMargin     = parseInt(tabbar.css("left")) + parseInt(tabbar.css("right")),
-    var tabbarWidth  = tabbar.width() + tabbarMargin;
+    var tabbarMargin = parseInt(tabbar.css("left")) + parseInt(tabbar.css("right")),
+    tabbarWidth      = tabbar.width() + tabbarMargin;
 
     tabListItem.each(function(index) {
         var dropdownListItem = dropdownList.children("li:eq("+index+")"),
