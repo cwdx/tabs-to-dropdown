@@ -29,8 +29,8 @@ var tabsToList = function() {
 $(window).on("load resize", tabsToList);
 
 $(function(){
-    tabListItem.on("hover click touchStart",function(e) { if ($(this).is(".hide")) e.preventDefault() });
-    dropdownList.on("hover click touchStart",function(e) { if ($(this).parent().not(".open")) e.preventDefault() });
+    tabListItem.on("hover click touchstart",function(e) { if ($(this).is(".hide")) e.preventDefault() });
+    dropdownList.on("hover click touchstart",function(e) { if ($(this).parent().not(".open")) e.preventDefault() });
     tabListItem.clone().appendTo(dropdownList);
     dropdownList.click(function(e) { e.stopPropagation() });
 
@@ -38,7 +38,7 @@ $(function(){
         e.stopPropagation();
         if (dropdownToBeToggled.is(".show")) dropdownToBeToggled.toggleClass("open");
     });
-    $(document).on("click touchStart", function() {
+    $(document).on("click ", function() {
         if (dropdownToBeToggled.is(".show")) dropdownToBeToggled.removeClass("open");
     });
 })
