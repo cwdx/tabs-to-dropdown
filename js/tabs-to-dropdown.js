@@ -1,18 +1,18 @@
-var tabbar     = $(".tabs-bar"),
-tabList        = tabbar.children(".tabs-list-container").children(".tabs-list"),
-tabListItem    = tabList.children("li"),
+var tabbar         = $(".tabs-bar"),
+    tabList        = tabbar.children(".tabs-list-container").children(".tabs-list"),
+    tabListItem    = tabList.children("li"),
 
-dropdownToggle = $("#dropdown-toggle"),
-dropdown       = $(".dropdown,#dropdown-toggle"),
-dropdownList   = dropdown.children("ul");
+    dropdownToggle = $("#dropdown-toggle"),
+    dropdown       = $(".dropdown,#dropdown-toggle"),
+    dropdownList   = dropdown.children("ul");
 
 var tabsToList = function() {
     var tabbarMargin = parseInt(tabbar.css("left")) + parseInt(tabbar.css("right")),
-    tabbarWidth      = tabbar.width() + tabbarMargin;
+        tabbarWidth  = tabbar.width() + tabbarMargin;
 
     tabListItem.each(function(index) {
         var dropdownListItem = dropdownList.children("li:eq("+index+")"),
-        tabListItemOffset    = $(this).offset().left + $(this).outerWidth();
+            tabListItemOffset    = $(this).offset().left + $(this).outerWidth();
 
         if (tabListItemOffset >= tabbarWidth) {
             $(this).addClass("hide").find("a").on('click',function(e){e.preventDefault();});
