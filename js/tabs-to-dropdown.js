@@ -33,12 +33,12 @@ $(function(){
     dropdownList.on("hover click touchStart",function(e) { if ($(this).parent().not(".open")) e.preventDefault() });
     tabListItem.clone().appendTo(dropdownList);
     dropdownList.click(function(e) { e.stopPropagation() });
-    
+
     dropdownToggle.click(function(e) {
         e.stopPropagation();
         if (dropdownToBeToggled.is(".show")) dropdownToBeToggled.toggleClass("open");
     });
-    $(document).click(function() {
+    $(document).on("click touchStart", function() {
         if (dropdownToBeToggled.is(".show")) dropdownToBeToggled.removeClass("open");
     });
 })
