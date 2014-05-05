@@ -8,12 +8,11 @@ var tabbar         = $(".tabs-bar"),
     dropdownList        = dropdown.children("ul");
 
 var tabsToList = function() {
-    var tabbarMargin = parseInt(tabbar.css("left")) + parseInt(tabbar.css("right")),
-        tabbarWidth  = tabbar.width() + tabbarMargin;
+    var tabbarWidth  = tabbar.width();
 
     tabListItem.each(function(index) {
         var dropdownListItem = dropdownList.children("li:eq("+index+")"),
-            tabListItemOffset    = $(this).offset().left + $(this).outerWidth();
+            tabListItemOffset    = $(this).position().left + $(this).outerWidth();
 
         if (tabListItemOffset >= tabbarWidth) {
             $(this).addClass("hide").find("a");
