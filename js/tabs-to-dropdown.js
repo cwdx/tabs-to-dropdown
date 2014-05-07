@@ -1,6 +1,6 @@
 $(function() {
     $(".tabs-to-dropdown").each(function() {
-        var resizeTimeout   = 5;
+        var resizeTimeout   = 10;
 
         var tabBar          = $(this).children(".tab-bar");
         var tabList         = tabBar.children("ul");
@@ -31,7 +31,6 @@ $(function() {
             if(typeof sizeWait != "undefined") { clearTimeout(sizeWait) };
             sizeWait = setTimeout(function(){
                 tabsToDropdown();
-                console.log("resized!")
             },resizeTimeout);
         });
 
