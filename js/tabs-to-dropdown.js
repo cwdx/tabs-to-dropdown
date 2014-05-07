@@ -6,7 +6,6 @@ $(function() {
         var tabList         = tabBar.children("ul");
         var tabListItem     = tabList.children("li");
 
-<<<<<<< HEAD
         var dropdown        = $(this).children(".dropdown");
         var dropdownToggle  = dropdown.children(".dropdown-toggle");
         var dropdownList    = dropdown.children("ul");
@@ -16,14 +15,6 @@ $(function() {
             tabListItem.each(function(index) {
                 var dropdownListItem  = dropdownList.children("li").eq(index);
                 var tabListItemOffset = $(this).position().left + $(this).outerWidth();
-=======
-var tabsToList = function() {
-    var tabbarWidth  = tabbar.width();
-
-    tabListItem.each(function(index) {
-        var dropdownListItem = dropdownList.children("li:eq("+index+")"),
-            tabListItemOffset    = $(this).position().left + $(this).outerWidth();
->>>>>>> FETCH_HEAD
 
                 if (tabListItemOffset >= tabBarWidth) {
                     $(this).addClass("ttd-hide"); dropdownListItem.addClass("ttd-show");
@@ -47,9 +38,4 @@ var tabsToList = function() {
         dropdownToggle.click(function(e) { dropdown.toggleClass("ttd-open"); e.stopPropagation() });
         $(document,"body").click(function() { dropdown.removeClass("ttd-open") });
     });
-<<<<<<< HEAD
 });
-=======
-})
-// christian wijnia
->>>>>>> FETCH_HEAD
