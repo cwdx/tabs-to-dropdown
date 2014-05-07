@@ -184,9 +184,9 @@
 .tabs-to-dropdown a:active,
 .tabs-to-dropdown button:active,
 .tabs-to-dropdown input[type=button] {
-    -webkit-transition:none;
-    -moz-transition:none;
-    -ms-transition:none;
-    -o-transition:all 0 ease;
-    transition:none;
+    -webkit-transition:none!important;
+    -moz-transition:none!important;
+    -ms-transition:none!important;
+    -o-transition:all 0 ease!important;
+    transition:none!important;
 }
