@@ -1,45 +1,41 @@
-var tabbar         = $(".tabs-bar"),
-    tabList        = tabbar.children(".tabs-list-container").children(".tabs-list"),
-    tabListItem    = tabList.children("li"),
+$(function() {
+    $(".tabs-to-dropdown").each(function() {
+        var resizeTimeout   = 5;
 
-    dropdownToggle      = $("#dropdown-toggle"),
-    dropdown            = $(".dropdown"),
-    dropdownToBeToggled = $(".dropdown,#dropdown-toggle"),
-    dropdownList        = dropdown.children("ul");
+        var tabBar          = $(this).children(".tab-bar");
+        var tabList         = tabBar.children("ul");
+        var tabListItem     = tabList.children("li");
 
-var tabsToList = function() {
-    var tabbarMargin = parseInt(tabbar.css("left")) + parseInt(tabbar.css("right")),
-        tabbarWidth  = tabbar.width() + tabbarMargin;
+        var dropdown        = $(this).children(".dropdown");
+        var dropdownToggle  = dropdown.children(".dropdown-toggle");
+        var dropdownList    = dropdown.children("ul");
 
-    tabListItem.each(function(index) {
-        var dropdownListItem = dropdownList.children("li:eq("+index+")"),
-            tabListItemOffset    = $(this).offset().left + $(this).outerWidth();
+        var tabsToDropdown  = function() {
+            var tabBarWidth = tabBar.width();
+            tabListItem.each(function(index) {
+                var dropdownListItem  = dropdownList.children("li").eq(index);
+                var tabListItemOffset = $(this).position().left + $(this).outerWidth();
 
-        if (tabListItemOffset >= tabbarWidth) {
-            $(this).addClass("hide").find("a");
-            dropdownListItem.addClass("show");
-        } else {
-            $(this).removeClass("hide");
-            dropdownListItem.removeClass("show");
-        }
+                if (tabListItemOffset >= tabBarWidth) {
+                    $(this).addClass("ttd-hide"); dropdownListItem.addClass("ttd-show");
+                } else {
+                    $(this).removeClass("ttd-hide"); dropdownListItem.removeClass("ttd-show");
+                }
+            });
+            tabList.children(".ttd-hide").length != 0 ? dropdown.addClass("ttd-show"): dropdown.removeClass("ttd-show");
+        };
+        tabListItem.clone().appendTo(dropdownList);
+
+        tabsToDropdown();
+        $(window).bind("resize", function(){
+            if(typeof sizeWait != "undefined") { clearTimeout(sizeWait) };
+            sizeWait = setTimeout(function(){
+                tabsToDropdown();
+                console.log("resized!")
+            },resizeTimeout);
+        });
+
+        dropdownToggle.click(function(e) { dropdown.toggleClass("ttd-open"); e.stopPropagation() });
+        $(document,"body").click(function() { dropdown.removeClass("ttd-open") });
     });
-    tabList.children(".hide").length != 0 ?
-    dropdownToBeToggled.addClass("show") :dropdownToBeToggled.removeClass("show");
-};
-$(window).on("load resize", tabsToList);
-
-$(function(){
-    tabListItem.on("hover click touchstart",function(e) { if ($(this).is(".hide")) e.preventDefault() });
-    dropdownList.on("hover click touchstart",function(e) { if ($(this).parent().not(".open")) e.preventDefault() });
-    tabListItem.clone().appendTo(dropdownList);
-    dropdownList.click(function(e) { e.stopPropagation() });
-
-    dropdownToggle.click(function(e) {
-        e.stopPropagation();
-        if (dropdownToBeToggled.is(".show")) dropdownToBeToggled.toggleClass("open");
-    });
-    $(document).on("click ", function() {
-        if (dropdownToBeToggled.is(".show")) dropdownToBeToggled.removeClass("open");
-    });
-})
-// christian wijnia
+});

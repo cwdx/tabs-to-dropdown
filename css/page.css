@@ -1,0 +1,47 @@
+/* General */
+html,body { min-height:100%; }
+body {
+    background:url(../img/nice-by-night.jpg) no-repeat center / cover;
+    font-family:Roboto, Arial, sans-serif;
+}
+
+/* Main */
+main>h2 {
+    font-size:60px;
+    background:rgba(19, 32, 45,.4);
+    position:absolute;
+    bottom:10%;right:5%;
+    color:#fff;
+    padding:25px;margin:0;
+    text-align:right;
+}
+main>h2>small{
+    font-size:30px;
+    display:block;
+    color:rgba(25, 189, 155,1);
+    text-transform:uppercase;
+}
+
+/* Media Queries */
+@media all and (max-width:699px), all and (max-height:340px) {
+    main>h2 {
+        padding:10px;
+        right:10px;
+        font-size:35px;
+        line-height:35px;
+    }
+    main>h2>small{
+        font-size:20px;
+        line-height:20px;
+    }
+}
+
+/* Transitions */
+main>h2,
+main>h2>small {
+    -webkit-transition:all .2s ease;
+    -moz-transition:all .2s ease;
+    -ms-transition:all .2s ease;
+    -o-transition:all .2s ease;
+    transition:all .2s ease;
+}
