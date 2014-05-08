@@ -36,7 +36,7 @@ $(function() {
             },resizeTimeout);
         });
 
-        dropdownToggle.bind("click touchstart", function(e) { dropdown.toggleClass("ttd-open"); e.stopPropagation() });
-        $(document,"body").bind("click touchstart", function() { dropdown.removeClass("ttd-open") });
+        dropdownToggle.on("touchstart click", function(e) { dropdown.toggleClass("ttd-open"); e.stopPropagation() });
+        $(document).on("touchstart click", function() { dropdown.removeClass("ttd-open") });
     });
 });
