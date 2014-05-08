@@ -90,8 +90,6 @@
 }
 .tabs-to-dropdown>.dropdown.ttd-show>button.dropdown-toggle { opacity:1;visibility:visible; }
 .tabs-to-dropdown>.dropdown>button.dropdown-toggle:hover { color:rgb(25, 189, 155); }
-
-.tabs-to-dropdown>.dropdown>button.dropdown-toggle:active,
 .tabs-to-dropdown>.dropdown.ttd-open>button.dropdown-toggle{ color:rgba(25, 189, 155,.65);}
 
 .tabs-to-dropdown>.dropdown>ul {
