@@ -36,6 +36,7 @@ $(function() {
             },resizeTimeout);
         });
 
+        dropdown.on("touchstart click", function(e) { e.stopPropagation() });
         dropdownToggle.on("touchstart click", function(e) { dropdown.toggleClass("ttd-open"); e.stopPropagation() });
         $(document).on("touchstart click", function() { dropdown.removeClass("ttd-open") });
     });
