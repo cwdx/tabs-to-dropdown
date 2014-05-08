@@ -1,6 +1,6 @@
 $(function() {
     $(".tabs-to-dropdown").each(function() {
-        var resizeTimeout   = 10;
+        var resizeTimeout   = 20;
 
         var tabBar          = $(this).children(".tab-bar");
         var tabList         = tabBar.children("ul");
@@ -22,8 +22,10 @@ $(function() {
                     $(this).removeClass("ttd-hide"); dropdownListItem.removeClass("ttd-show");
                 }
             });
+
             tabList.children(".ttd-hide").length != 0 ? dropdown.addClass("ttd-show"): dropdown.removeClass("ttd-show");
         };
+
         tabListItem.clone().appendTo(dropdownList);
 
         tabsToDropdown();
@@ -34,7 +36,7 @@ $(function() {
             },resizeTimeout);
         });
 
-        dropdownToggle.click(function(e) { dropdown.toggleClass("ttd-open"); e.stopPropagation() });
-        $(document,"body").click(function() { dropdown.removeClass("ttd-open") });
+        dropdownToggle.bind("click touchstart", function(e) { dropdown.toggleClass("ttd-open"); e.stopPropagation() });
+        $(document,"body").bind("click touchstart", function() { dropdown.removeClass("ttd-open") });
     });
 });
